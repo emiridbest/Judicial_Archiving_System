@@ -33,3 +33,4 @@ This section
 # Judicial_Archiving_System
 
 This project, is an archive of judicial documents. This will encourage quick turnover and recovery of documents. 
+Feel free to clone and contribute to the project.
