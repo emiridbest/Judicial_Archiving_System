@@ -21,6 +21,7 @@ function App() {
   const [role, setRole] = useState("");
   const [documents, setDocuments] = useState([]);
   // Function to initialize the contract.
+  // This function uses the Celo contractkit to connect to the contract using web3.
   const initContract = useCallback(async () => {
     try {
       if (!window.ethereum) {
@@ -40,14 +41,15 @@ function App() {
       console.log(error);
     }
   }, [contractAddress]);
-
+  // Using useEffect hook to initialize contract whenever currentAccount changes
   useEffect(() => {
     if (currentAccount) {
       initContract();
     }
   }, [currentAccount, initContract]);
-
-  //connect wallet
+  
+ // Function to connect to the wallet
+  // This function connects to the wallet and sets the current account.
   async function connectToWallet() {
     try {
       if (!window.ethereum) throw new Error("Wallet extension not detected");
