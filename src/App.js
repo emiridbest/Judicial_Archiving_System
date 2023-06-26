@@ -64,7 +64,8 @@ function App() {
       throw new Error("Please install Celo Wallet extension");
     }
   }
-
+ // Function to handle form changes
+  // This function is used to update the formData state whenever there's a change in the form inputs.
   const handleChange = (e, name) => {
     setFormData((prevState) => ({ ...prevState, [name]: e.target.value }));
   };
