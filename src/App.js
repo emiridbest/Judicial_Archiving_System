@@ -13,13 +13,14 @@ import {
 import "./App.css";
 
 function App() {
+    // State variables to store account, contract, kit and data information.
   const [currentAccount, setCurrentAccount] = useState("");
   const [contract, setContractInstance] = useState(null);
   const [kit, setKit] = useState(null);
   const [formData, setFormData] = useState({ address: "", role: "" });
   const [role, setRole] = useState("");
   const [documents, setDocuments] = useState([]);
-
+  // Function to initialize the contract.
   const initContract = useCallback(async () => {
     try {
       if (!window.ethereum) {
